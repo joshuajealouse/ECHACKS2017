@@ -4,19 +4,22 @@
  * and open the template in the editor.
  */
 package starynight;
-
+import javax.swing.*;
+import java.awt.*;
 /**
  *
  * @author JoshJ
  */
-public class StaryNight {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args)
-    {
-    	
+public class StaryNight extends JApplet {
+    String test ;
+    public void init(){
+        test = "Hello World!!";
     }
     
+    public void paint(Graphics screen)
+    {
+        Graphics2D screen2D = (Graphics2D) screen;
+        
+        screen2D.drawString(test, 100, 75);
+    }
 }
