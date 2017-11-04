@@ -10,6 +10,10 @@ package starynight;
  * @author JoshJ
  */
 public class WeatherData {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 50b00f037017f9d436ae039fdfcd030d15e887da
     /*
      * Pulling Data from external file
      */
