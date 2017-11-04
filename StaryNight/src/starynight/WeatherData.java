@@ -10,5 +10,5 @@ package starynight;
  * @author JoshJ
  */
 public class WeatherData {
-    
+    //coment for demo
 }
