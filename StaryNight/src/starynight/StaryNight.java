@@ -14,6 +14,15 @@ public class StaryNight extends JApplet {
     String test ;
     public void init(){
         test = "Hello World!!";
+public class StaryNight {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args)
+    {
+    	WeatherData data = new WeatherData();
+    	data.XMLFile();
     }
     
     public void paint(Graphics screen)
