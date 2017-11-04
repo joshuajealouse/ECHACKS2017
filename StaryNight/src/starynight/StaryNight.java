@@ -35,14 +35,14 @@ public class StaryNight {
     	input.close();
     	
     	WeatherData data = new WeatherData();
-    	System.out.println(data.XMLFile("city", "name", city));
-    	System.out.println(data.XMLFile("speed", "name", city));
-    	System.out.println(data.XMLFile("temperature", "max", city)); //parse to double -> double d = parseDouble(max);
-    	System.out.println(data.XMLFile("temperature", "min", city));
-    	System.out.println(data.XMLFile("clouds", "name", city));
-    	System.out.println(data.XMLFile("clouds", "value", city));
-    	System.out.println(data.XMLFile("weather", "value", city));
-    	System.out.println(data.XMLFile("pressure", "value", city));
+    	String cityName = data.XMLFile("city", "name", city);
+    	String windSpeed = data.XMLFile("speed", "name", city);
+    	String maxTemp = data.XMLFile("temperature", "max", city); //parse to double -> double d = parseDouble(max);
+    	String minTemp = data.XMLFile("temperature", "min", city);
+    	String descripCloud = data.XMLFile("clouds", "name", city);
+    	String valueCloud = data.XMLFile("clouds", "value", city);
+    	String weatherType = data.XMLFile("weather", "value", city);
+    	String airPressure = data.XMLFile("pressure", "value", city);
     	
     	//PollutionIndex datas = new PollutionIndex();
     	//datas.url();
