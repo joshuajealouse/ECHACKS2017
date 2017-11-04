@@ -21,7 +21,7 @@ public class StaryNight extends JApplet {
     }
 }
 */
-public class StaryNight {
+public class DataOut {
 
     /**
      * @param args the command line arguments
