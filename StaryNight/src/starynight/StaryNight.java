@@ -16,7 +16,8 @@ public class StaryNight {
      */
     public static void main(String[] args)
     {
-    	
+    	WeatherData data = new WeatherData();
+    	data.XMLFile();
     }
     
 }

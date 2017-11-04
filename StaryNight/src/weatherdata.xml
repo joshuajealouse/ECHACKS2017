@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<current>
+<city id="2643743" name="London">
+<coord lat="51.51" lon="-0.13"/>
+<country>GB</country>
+<sun set="2017-01-30T16:47:56" rise="2017-01-30T07:40:36"/>
+</city>
+<temperature unit="kelvin" max="281.15" min="278.15" value="280.15"/>
+<humidity unit="%" value="81"/>
+<pressure unit="hPa" value="1012"/>
+<wind>
+<speed name="Gentle Breeze" value="4.6"/>
+<gusts/>
+<direction name="East" value="90" code="E"/>
+</wind>
+<clouds name="overcast clouds" value="90"/>
+<visibility value="10000"/>
+<precipitation mode="no"/>
+<weather value="mist" icon="50d" number="701"/>
+<lastupdate value="2017-01-30T15:50:00"/>
+</current>
