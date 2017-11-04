@@ -10,6 +10,22 @@ package starynight;
  * @author JoshJ
  */
 public class WeatherData {
-    //Josh is cool
+    /*
+     * Pulling Data from external file
+     */
 	
+	
+	/*
+	 * Sorts the data into multiple parameters
+	 */
+	
+	
+	/*
+	 * Refresh Method
+	 */
+	
+	
+	/*
+	 * Outputs to another file
+	 */
 }
