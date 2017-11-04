@@ -37,7 +37,7 @@ public class StaryNight {
     	System.out.println(data.XMLFile("weather", "value"));
     	System.out.println(data.XMLFile("pressure", "value"));
     	
-    	PollutionIndex datas = new PollutionIndex();
+    	//PollutionIndex datas = new PollutionIndex();
     	datas.url();
     	
     }
