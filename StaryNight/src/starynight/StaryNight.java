@@ -10,10 +10,15 @@ import java.awt.*;
  *
  * @author JoshJ
  */
+/*
 public class StaryNight extends JApplet {
     String test ;
-    public void init(){
+    public void init()
+    {
         test = "Hello World!!";
+    }
+}
+*/
 public class StaryNight {
 
     /**
@@ -22,13 +27,16 @@ public class StaryNight {
     public static void main(String[] args)
     {
     	WeatherData data = new WeatherData();
-    	data.XMLFile();
+    	System.out.println(data.XMLFile("city", "name"));
+    	System.out.println(data.XMLFile("speed", "name"));
+    	
     }
-    
+    /* To be reopened at a later point
     public void paint(Graphics screen)
     {
         Graphics2D screen2D = (Graphics2D) screen;
         
         screen2D.drawString(test, 100, 75);
     }
+    */
 }

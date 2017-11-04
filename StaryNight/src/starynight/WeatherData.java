@@ -18,20 +18,19 @@ public class WeatherData {
     /*
      * Pulling Data from external file
      */
-	public void XMLFile () 
+	public String XMLFile (String elementName, String attrName) 
 	{
 		Document xmlDoc = getDocument("./src/weatherdata.xml"); //declaring the xml as a Document
-		xmlDoc.getDocumentElement();
-		xmlDoc.getDocumentElement().getNodeName();
+		xmlDoc.getDocumentElement();					//Get the name of root element
+		//System.out.println(xmlDoc.getDocumentElement().getNodeName());//xmlDoc.getDocumentElement().getNodeName();		//Check if this is needed for program, as not using root
 		
-		NodeList listOfValues = xmlDoc.getElementsByTagName("city"); //change 'tagname' in brackets to the element name
+		NodeList listOfValues = xmlDoc.getElementsByTagName("current"); //change 'tagname' in brackets to the element name
 		
-		String elementName = "city";
-		String attrName = "name";
-		
-		getElementAndAttrib(listOfValues, elementName, attrName);
+		return getElementAndAttrib(listOfValues, elementName, attrName);
 	}
-	//Define getDocument
+	/*
+	 * Define getDocument and start the parse of the XML file
+	 */
 	private Document getDocument(String docString) {
 		try
 		{
@@ -39,7 +38,8 @@ public class WeatherData {
 			
 			factory.setIgnoringComments(true);
 			factory.setIgnoringElementContentWhitespace(true);
-			factory.setValidating(true);
+			factory.setValidating(false);
+			factory.setNamespaceAware(true);
 			
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			
@@ -50,6 +50,7 @@ public class WeatherData {
 		{
 			System.out.println(ex.getMessage());
 		}
+		
 		return null;
 	}
 	/*
@@ -63,9 +64,9 @@ public class WeatherData {
 			{
 				Node elementNode = listOfValues.item(i); //Get node of city
 				
-				Element elementAttr = (Element)elementNode; //Access node info
+				Element elementElement = (Element)elementNode; //Access node info
 				
-				NodeList attrNode = elementAttr.getElementsByTagName(elementName);
+				NodeList attrNode = elementElement.getElementsByTagName(elementName);
 				
 				Element attrElement = (Element)attrNode.item(0);
 				
@@ -73,7 +74,7 @@ public class WeatherData {
 				
 				if (attrElement.hasAttribute(attrName))
 				{
-					System.out.println(attrElement.getAttribute(attrName)); 
+					return(attrElement.getAttribute(attrName)); 
 				}
 				else 
 				{
@@ -83,7 +84,7 @@ public class WeatherData {
 		}
 		catch(Exception ex)
 		{
-			System.out.println(ex.getMessage());
+			return ex.getMessage();
 		}
 		return null;
 	}
