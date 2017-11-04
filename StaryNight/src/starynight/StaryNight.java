@@ -6,6 +6,7 @@
 package starynight;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 /**
  *
  * @author JoshJ
@@ -23,12 +24,21 @@ public class StaryNight {
 
     /**
      * @param args the command line arguments
+     * @throws IOException 
      */
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
     	WeatherData data = new WeatherData();
     	System.out.println(data.XMLFile("city", "name"));
     	System.out.println(data.XMLFile("speed", "name"));
+    	System.out.println(data.XMLFile("temperature", "max")); //parse to double -> double d = parseDouble(max);
+    	System.out.println(data.XMLFile("temperature", "min"));
+    	System.out.println(data.XMLFile("clouds", "name"));
+    	System.out.println(data.XMLFile("weather", "value"));
+    	System.out.println(data.XMLFile("pressure", "value"));
+    	
+    	PollutionIndex datas = new PollutionIndex();
+    	datas.url();
     	
     }
     /* To be reopened at a later point

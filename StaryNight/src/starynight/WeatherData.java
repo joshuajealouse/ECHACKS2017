@@ -20,7 +20,8 @@ public class WeatherData {
      */
 	public String XMLFile (String elementName, String attrName) 
 	{
-		Document xmlDoc = getDocument("./src/weatherdata.xml"); //declaring the xml as a Document
+		Document xmlDoc = getDocument("./src/weatherdata.xml");
+		//Document xmlDoc = getDocument("http://api.openweathermap.org/data/2.5/weather?q=Ajax&mode=xml&appid=5fc3e373e9ceb862d37b4824836bb81e#"); //declaring the xml as a Document
 		xmlDoc.getDocumentElement();					//Get the name of root element
 		//System.out.println(xmlDoc.getDocumentElement().getNodeName());//xmlDoc.getDocumentElement().getNodeName();		//Check if this is needed for program, as not using root
 		
@@ -70,8 +71,6 @@ public class WeatherData {
 				
 				Element attrElement = (Element)attrNode.item(0);
 				
-				NodeList attrList = attrElement.getChildNodes();
-				
 				if (attrElement.hasAttribute(attrName))
 				{
 					return(attrElement.getAttribute(attrName)); 
@@ -88,20 +87,5 @@ public class WeatherData {
 		}
 		return null;
 	}
-	
-	
-	/*
-	 * Sorts the data into multiple parameters
-	 */
-	
-	
-	/*
-	 * Refresh Method
-	 */
-	
-	
-	/*
-	 * Outputs to another file
-	 */
 
 }
