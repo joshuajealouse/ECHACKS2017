@@ -7,6 +7,7 @@ package starynight;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.util.*;
 /**
  *
  * @author JoshJ
@@ -24,18 +25,24 @@ public class StaryNight {
 
     /**
      * @param args the command line arguments
-     * @throws IOException 
+     * @throws IOException https://echacks2.slack.com/archives/C7RHAPX0B/p1509816040000079
      */
     public static void main(String[] args) throws IOException
     {
+    	Scanner input = new Scanner (System.in);
+    	System.out.println("What is the city name?");
+    	String city = input.next();
+    	input.close();
+    	
     	WeatherData data = new WeatherData();
-    	System.out.println(data.XMLFile("city", "name"));
-    	System.out.println(data.XMLFile("speed", "name"));
-    	System.out.println(data.XMLFile("temperature", "max")); //parse to double -> double d = parseDouble(max);
-    	System.out.println(data.XMLFile("temperature", "min"));
-    	System.out.println(data.XMLFile("clouds", "name"));
-    	System.out.println(data.XMLFile("weather", "value"));
-    	System.out.println(data.XMLFile("pressure", "value"));
+    	System.out.println(data.XMLFile("city", "name", city));
+    	System.out.println(data.XMLFile("speed", "name", city));
+    	System.out.println(data.XMLFile("temperature", "max", city)); //parse to double -> double d = parseDouble(max);
+    	System.out.println(data.XMLFile("temperature", "min", city));
+    	System.out.println(data.XMLFile("clouds", "name", city));
+    	System.out.println(data.XMLFile("clouds", "value", city));
+    	System.out.println(data.XMLFile("weather", "value", city));
+    	System.out.println(data.XMLFile("pressure", "value", city));
     	
     	//PollutionIndex datas = new PollutionIndex();
     	//datas.url();
