@@ -21,21 +21,24 @@ public class StaryNight extends JApplet {
 }
 */
 public class StaryNight {
-
+    
     /**
      * @param args the command line arguments
      * @throws IOException https://echacks2.slack.com/archives/C7RHAPX0B/p1509816040000079
      */
-    public static void main(String[] args) throws IOException
+    /*public static void main(String[] args) throws IOException
     {
+        double rank;
     	Scanner input = new Scanner (System.in);
     	System.out.println("What is the city name?");
     	String city = input.next();
     	input.close();
-    	
+        
+    	Calculations calc = new Calculations();
+        
     	WeatherData data = new WeatherData();
     	String cityName = data.XMLFile("city", "name", city); System.out.println(cityName);
-    	String windSpeed = data.XMLFile("speed", "name", city); System.out.println(windSpeed);
+    	String windSpeed = data.XMLFile("speed", "value", city); System.out.println(windSpeed);
     	String maxTemp = data.XMLFile("temperature", "max", city); System.out.println(maxTemp); 
     	String minTemp = data.XMLFile("temperature", "min", city); System.out.println(minTemp);
     	String descripCloud = data.XMLFile("clouds", "name", city); System.out.println(descripCloud);
@@ -43,10 +46,10 @@ public class StaryNight {
     	String weatherType = data.XMLFile("weather", "value", city); System.out.println(weatherType);
     	String airPressure = data.XMLFile("pressure", "value", city); System.out.println(airPressure);
     	
-    	//PollutionIndex datas = new PollutionIndex();
-    	//datas.url();
-    	
-    }
+        rank = calc.ranking(cityName, windSpeed, maxTemp, minTemp, descripCloud, valueCloud, weatherType, airPressure);
+  	
+    	System.out.println(rank);
+    */
     /* To be reopened at a later point
     public void paint(Graphics screen)
     {
