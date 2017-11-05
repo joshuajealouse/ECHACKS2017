@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package starynight;
-import javax.swing.*;
-import java.awt.*;
+
 import java.io.IOException;
 import java.util.*;
 /**
@@ -21,7 +20,7 @@ public class StaryNight extends JApplet {
     }
 }
 */
-public class DataOut {
+public class StaryNight {
 
     /**
      * @param args the command line arguments
@@ -35,14 +34,14 @@ public class DataOut {
     	input.close();
     	
     	WeatherData data = new WeatherData();
-    	String cityName = data.XMLFile("city", "name", city);
-    	String windSpeed = data.XMLFile("speed", "name", city);
-    	String maxTemp = data.XMLFile("temperature", "max", city); //parse to double -> double d = parseDouble(max);
-    	String minTemp = data.XMLFile("temperature", "min", city);
-    	String descripCloud = data.XMLFile("clouds", "name", city);
-    	String valueCloud = data.XMLFile("clouds", "value", city);
-    	String weatherType = data.XMLFile("weather", "value", city);
-    	String airPressure = data.XMLFile("pressure", "value", city);
+    	String cityName = data.XMLFile("city", "name", city); System.out.println(cityName);
+    	String windSpeed = data.XMLFile("speed", "name", city); System.out.println(windSpeed);
+    	String maxTemp = data.XMLFile("temperature", "max", city); System.out.println(maxTemp); 
+    	String minTemp = data.XMLFile("temperature", "min", city); System.out.println(minTemp);
+    	String descripCloud = data.XMLFile("clouds", "name", city); System.out.println(descripCloud);
+    	String valueCloud = data.XMLFile("clouds", "value", city); System.out.println(valueCloud);
+    	String weatherType = data.XMLFile("weather", "value", city); System.out.println(weatherType);
+    	String airPressure = data.XMLFile("pressure", "value", city); System.out.println(airPressure);
     	
     	//PollutionIndex datas = new PollutionIndex();
     	//datas.url();
