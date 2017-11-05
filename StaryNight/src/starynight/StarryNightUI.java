@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package starynight;
-
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -37,7 +39,7 @@ public class StarryNightUI extends javax.swing.JFrame {
         setTitle("Starry Night");
         setBackground(new java.awt.Color(0, 0, 0));
         setForeground(java.awt.Color.white);
-        setResizable(false);
+        setPreferredSize(new java.awt.Dimension(500, 400));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,6 +87,8 @@ public class StarryNightUI extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
+        getAccessibleContext().setAccessibleName("StarryNightFrame");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -111,10 +115,14 @@ public class StarryNightUI extends javax.swing.JFrame {
     	String airPressure = data.XMLFile("pressure", "value", city); //System.out.println(airPressure);
     	
         rank = calc.ranking(cityName, windSpeed, maxTemp, minTemp, descripCloud, valueCloud, weatherType, airPressure);
-  	
-    	System.out.println(rank);
+  	String rankStr="";
+        for (int i=0; i <Math.round(rank*10);i++)
+        {
+            rankStr+="🌟";
+        }
+        //System.out.println(rank);
         jTextField1.setText(cityName);
-        jTextArea1.setText(cityName + " has a "+(Math.round(rank*10))+" star rating for viewing the sky\nIt is currently "+maxTemp+" C° out");
+        jTextArea1.setText(cityName + " has a "+rankStr+" rating for viewing the sky\nIt is currently "+maxTemp+" C° out");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -150,6 +158,11 @@ public class StarryNightUI extends javax.swing.JFrame {
                 new StarryNightUI().setVisible(true);
             }
         });
+        
+
+
+
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
