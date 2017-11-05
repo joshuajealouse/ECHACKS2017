@@ -1,20 +1,26 @@
 package starynight;
 
-public class Calcluations {
+public class Calculations {
 
-	public double ranking (String cityName, String windSpeed, String maxTemp, String minTemp, String descripCloud, String valueCloud, String weatherType, String airPressure)
+    
+        public Calculations()
+        {
+            
+        }
+        
+	public  double ranking (String cityName, String windSpeed, String maxTemp, String minTemp, String descripCloud, String valueCloud, String weatherType, String airPressure)
 	{
 		double calculation = 0;
 		int a, b, c, d, e, f, g;
 		int facB=1, facC=2, facD=1, facF=1;
 		int rankB=0, rankC=0, rankD=0, rankF=0;
-		a = Integer.parseInt(cityName); //not needed
-		b = Integer.parseInt(windSpeed); //<20, 20-40, 41-60, 60-80, 80-100
+		//a = Integer.parseInt(cityName); //not needed
+		b = (int) Double.parseDouble(windSpeed); //<20, 20-40, 41-60, 60-80, 80-100
 		c = Integer.parseInt(maxTemp); //<0 ,0-10, 11-20, 21-25, 26>
 		d = Integer.parseInt(minTemp); //if maxTemp-minTemp>10 (subtract 1)
-		e = Integer.parseInt(descripCloud); //not needed
+		//e = Integer.parseInt(descripCloud); //not needed
 		f = Integer.parseInt(valueCloud); //0-20, 21-40, 41-60, 61-80, 81-100
-		g = Integer.parseInt(weatherType);//not needed
+		//g = Integer.parseInt(weatherType);//not needed
 		
 		/*
 		 * Wind Speed
@@ -101,7 +107,7 @@ public class Calcluations {
 		}
 		rankF=facF*rankF;
 		
-		calculation = (rankB+rankC+rankF)/16;
+		calculation = (rankB+rankC+rankF)/16.0;
 		return calculation;
 	}
 
